@@ -302,7 +302,7 @@ function updateScoreInputs() {
                            id="score-${player.index}" 
                            data-player="${player.name}" 
                            placeholder="Final score (starting: 25,000)" 
-                           step="100"
+                           step="any"
                            value="${savedValue}" />
                 </div>
             `;
@@ -470,7 +470,7 @@ function editGame(gameId) {
                     <input type="number" 
                            id="edit-score-${gameId}-${idx}" 
                            value="${result.finalScore}" 
-                           step="100" 
+                           step="any" 
                            placeholder="Final score" />
                 </div>
             `).join('')}
