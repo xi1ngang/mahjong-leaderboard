@@ -152,7 +152,7 @@ function recordGame() {
         }
         
         const score = parseFloat(scoreStr);
-        if (isNaN(score) || score < 0) {
+        if (isNaN(score)) {
             alert(`Please enter a valid score for ${player.position} (${player.name})`);
             return;
         }
@@ -302,7 +302,6 @@ function updateScoreInputs() {
                            id="score-${player.index}" 
                            data-player="${player.name}" 
                            placeholder="Final score (starting: 25,000)" 
-                           min="0" 
                            step="100"
                            value="${savedValue}" />
                 </div>
@@ -471,7 +470,6 @@ function editGame(gameId) {
                     <input type="number" 
                            id="edit-score-${gameId}-${idx}" 
                            value="${result.finalScore}" 
-                           min="0" 
                            step="100" 
                            placeholder="Final score" />
                 </div>
@@ -505,7 +503,7 @@ function saveEditedGame(gameId) {
         }
         
         const newScore = parseFloat(scoreInput.value);
-        if (isNaN(newScore) || newScore < 0) {
+        if (isNaN(newScore)) {
             alert(`Please enter a valid score for ${result.position} (${result.name})`);
             hasError = true;
             break;
