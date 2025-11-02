@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Mahjong Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🀄 Japanese Mahjong Leaderboard</h1>
+        </header>
+
+        <div class="main-content">
+            <!-- Player Management Section -->
+            <section class="card">
+                <h2>Add New Player</h2>
+                <div class="form-group">
+                    <input type="text" id="playerName" placeholder="Enter player name" />
+                    <button onclick="addPlayer()">Add Player</button>
+                </div>
+            </section>
+
+            <!-- Record Game Section -->
+            <section class="card">
+                <h2>Record New Game</h2>
+                <div id="gameForm">
+                    <div id="playerSelection"></div>
+                    <div id="playerScores"></div>
+                    <button onclick="recordGame()" class="btn-primary">Record Game</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Leaderboard Section - Full Width -->
+        <section class="card leaderboard-full-width">
+                <h2>Leaderboard</h2>
+                <div class="table-container">
+                    <table id="leaderboard">
+                        <thead>
+                            <tr>
+                                <th>顺位</th>
+                                <th>姓名</th>
+                                <th>点数</th>
+                                <th>庄数</th>
+                                <th>平均顺位</th>
+                                <th>1位</th>
+                                <th>2位</th>
+                                <th>3位</th>
+                                <th>4位</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                        </tbody>
+                    </table>
+                </div>
+        </section>
+
+        <div class="main-content">
+            <!-- Game History Section -->
+            <section class="card">
+                <h2>Game History</h2>
+                <div id="gameHistory" class="history-container">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
